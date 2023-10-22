@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Citations &#8212; A Hands-On Introduction to Using Python in Oceanic Colour Studies</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Hands-On Introduction to Using Python in Oceanic Colour Studies
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapter 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapter1/chapter1.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter1/intro.html">1.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1/oc_applications.html">1.2. Ocean colour remote sensing and its application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1/objective.html">1.3. Overall objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1/outline_learning_outcomes.html">1.4. Outline and learning outcomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1/references.html">1.5. References</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ecop-cbm/ocean-color-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ecop-cbm/ocean-color-handbook/issues/new?title=Issue%20on%20page%20%2Freferences.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/references.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Citations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <!-- @format -->
+<section class="tex2jax_ignore mathjax_ignore" id="citations">
+<h1>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h1>
+<div class="docutils container" id="id1">
+<dl class="citation">
+<dt class="label" id="id2"><span class="brackets">Ahm19</span></dt>
+<dd><p>Hafez Ahmad. Applications of Remote Sensing in Oceanographic Research. <em>Int. J. Oceanogr. Aquac.</em>, 2019. <a class="reference external" href="https://doi.org/10.23880/ijoac-16000159">doi:10.23880/ijoac-16000159</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">BSF+03</span></dt>
+<dd><p>Marcel Babin, Dariusz Stramski, Giovanni M. Ferrari, Herve Claustre, Annick Bricaud, Grigor Obolensky, and Nicolas Hoepffner. Variations in the light absorption coefficients of phytoplankton, nonalgal particles, and dissolved organic matter in coastal waters around Europe. <em>J. Geophys. Res. Ocean.</em>, 2003. <a class="reference external" href="https://doi.org/10.1029/2001jc000882">doi:10.1029/2001jc000882</a>.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">GMR16</span></dt>
+<dd><p>Mohammad Haji Gholizadeh, Assefa M. Melesse, and Lakshmi Reddi. A comprehensive review on water quality parameters estimation using remote sensing techniques. 2016. <a class="reference external" href="https://doi.org/10.3390/s16081298">doi:10.3390/s16081298</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">GGH+14</span></dt>
+<dd><p>Joaquim I. Goes, Helga do Rosario Gomes, Elin M. Haugen, Kali T. McKee, Eurico J. D'Sa, Alexander M. Chekalyuk, Diane K. Stoecker, Phyllis J. Stabeno, Sei Ichi Saitoh, and Raymond N. Sambrotto. Fluorescence, pigment and microscopic characterization of Bering Sea phytoplankton community structure and photosynthetic competency in the presence of a Cold Pool during summer. <em>Deep. Res. Part II Top. Stud. Oceanogr.</em>, 2014. <a class="reference external" href="https://doi.org/10.1016/j.dsr2.2013.12.004">doi:10.1016/j.dsr2.2013.12.004</a>.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">GSB+19</span></dt>
+<dd><p>Steve B. Groom, Shubha Sathyendranath, Yai Ban, Stewart Bernard, Bob Brewin, Vanda Brotas, Carsten Brockmann, Prakash Chauhan, Jong Kuk Choi, Andrei Chuprin, Stefano Ciavatta, Paulo Cipollini, Craig Donlon, Bryan A. Franz, Xianqiang He, Takafumi Hirata, Thomas Jackson, Milton Kampel, Hajo Krasemann, Samantha J. Lavender, Silvia Pardo-Martinez, Frederic Melin, Trevor Platt, Rosalia Santoleri, Jozef Skakala, Blake Schaeffer, Marie Smith, Francois Steinmetz, Andre Valente, and Menghua Wang. Satellite ocean colour: Current status and future perspective. 2019. <a class="reference external" href="https://doi.org/10.3389/fmars.2019.00485">doi:10.3389/fmars.2019.00485</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">IOC00</span></dt>
+<dd><p>IOCCG. IOCCG Report Number 03: Remote Sensing of Ocean Colour in Coastal, and Other Optically-Complex, Waters. Technical Report, International Ocean-Colour Coordinating Group, Dartmouth, Canada, 2000. URL: <a class="reference external" href="http://www.ioccg.org">http://www.ioccg.org</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">LCA02</span></dt>
+<dd><p>ZhongPing Lee, Kendall L. Carder, and Robert A. Arnone. Deriving inherent optical properties from water color: a multiband quasi-analytical algorithm for optically deep waters. <em>Appl. Opt.</em>, 2002. <a class="reference external" href="https://doi.org/10.1364/ao.41.005755">doi:10.1364/ao.41.005755</a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">MaureTI+21</span></dt>
+<dd><p>Elígio de Raús Maúre, Genki Terauchi, Joji Ishizaka, Nicholas Clinton, and Michael DeWitt. Globally consistent assessment of coastal eutrophication. <em>Nat. Commun.</em>, 12(1):6142, oct 2021. URL: <a class="reference external" href="https://www.nature.com/articles/s41467-021-26391-9">https://www.nature.com/articles/s41467-021-26391-9</a>, <a class="reference external" href="https://doi.org/10.1038/s41467-021-26391-9">doi:10.1038/s41467-021-26391-9</a>.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">MDSD21</span></dt>
+<dd><p>Susanne Menden-Deuer, Wayne Homer Slade, and Heidi Dierssen. Promoting Instrument Development for New Research Avenues in Ocean Science: Opening the Black Box of Grazing. <em>Front. Mar. Sci.</em>, 2021. <a class="reference external" href="https://doi.org/10.3389/fmars.2021.695938">doi:10.3389/fmars.2021.695938</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">OReillyW19</span></dt>
+<dd><p>John E. O'Reilly and P. Jeremy Werdell. Chlorophyll algorithms for ocean color sensors - OC4, OC5 &amp; OC6. <em>Remote Sens. Environ.</em>, 2019. <a class="reference external" href="https://doi.org/10.1016/j.rse.2019.04.021">doi:10.1016/j.rse.2019.04.021</a>.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">Teo16</span></dt>
+<dd><p>Ana C. Teodoro. Optical Satellite Remote Sensing of the Coastal Zone Environment — An Overview. In <em>Environ. Appl. Remote Sens.</em> 2016. <a class="reference external" href="https://doi.org/10.5772/61974">doi:10.5772/61974</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">YIG+18</span></dt>
+<dd><p>Meng Meng Yang, Joji Ishizaka, Joaquim I. Goes, Helga do R. Gomes, Elígio de Raús Maúre, Masataka Hayashi, Toshiya Katano, Naoki Fujii, Katsuya Saitoh, Takayuki Mine, Hirokazu Yamashita, Naoki Fujii, and Akiko Mizuno. Improved MODIS-Aqua chlorophyll-a retrievals in the turbid semi-enclosed Ariake Bay, Japan. <em>Remote Sens.</em>, 2018. <a class="reference external" href="https://doi.org/10.3390/rs10091335">doi:10.3390/rs10091335</a>.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ECOP Africa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div> <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>    <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://camo.githubusercontent.com/9b9ea65d95c9ef878afa1987df65731d47681336/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f736561626f726e2e737667"></a>    The contents of this repository are shared under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.    Software elements are additionally licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD (3-Clause) License</a>.</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
