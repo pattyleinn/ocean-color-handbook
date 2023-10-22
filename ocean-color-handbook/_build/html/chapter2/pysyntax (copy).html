@@ -1,0 +1,841 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Language Structures and Syntax &#8212; A Hands-On Introduction to Using Python in Oceanic Colour Studies</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2/pysyntax (copy)';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Hands-On Introduction to Using Python in Oceanic Colour Studies
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter1/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/applications.html">1.2. Ocean colour remote sensing and its application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/objective.html">1.3. Overall objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/learnoutcomes.html">1.4. Outline and learning outcomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/references.html">1.5. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">2. A Brief Introduction to Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyenv.html">2.2. Python Working Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pysyntax.html">2.3. Language Structures and Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ocmodules.html">2.4. Modules Relevant to Ocean Colour Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataimport.html">2.5. Data Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datavis.html">2.6. Data Visualisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html">2.7. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="references.html">2.8. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter3/intro.html">3. Introduction to Ocean Colour</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/ocrs.html">3.5. Ocean colour and remote sensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/dataproducts.html">3.6. Overview of data products in ocean colour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/dataretrieval.html">3.7. Data retrieval</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter4/intro.html">4. Working with Map Projections in Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/definitions.html">4.4. Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../chapter5/intro.html">5. Data Analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/swathreproj.html">5.4. Swath Reprojection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/timeanalysis.html">5.5. Temporal Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/spaceanalysis.html">5.6. Spatial Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/outputs.html">5.7. Saving Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/intro.html">6. Case studies</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial1.html">6.3. Content with notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial2.html">6.4. Content with notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial3.html">6.5. Content with notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial4.html">6.6. Content with notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/tutorial5.html">6.7. Content with notebooks</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ecop-cbm/ocean-color-handbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ecop-cbm/ocean-color-handbook/issues/new?title=Issue%20on%20page%20%2Fchapter2/pysyntax (copy).html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapter2/pysyntax (copy).md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Language Structures and Syntax</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-type-integer"><em>Numeric type: integer</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-type-float"><em>Numeric type: float</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-type-complex"><em>Numeric type: complex</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-type-string"><em>Text type: string</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-type-logical"><em>Boolean type: logical</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composite-data-type-or-data-structures">Composite Data Type or Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-list"><em>Sequence type: list</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-tuple"><em>Sequence type: tuple</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-range"><em>Sequence type: range</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-type-dict"><em>Mapping type: dict</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-type-set"><em>Set type: set</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-sequence-type-bytes"><em>Binary sequence type: bytes</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-casting-in-python">Type Casting in Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <!-- @format -->
+<p><strong>Authors:</strong> Mathabo Malange, Phangoxolo Sishuba</p>
+<section class="tex2jax_ignore mathjax_ignore" id="language-structures-and-syntax">
+<h1>Language Structures and Syntax<a class="headerlink" href="#language-structures-and-syntax" title="Permalink to this heading">#</a></h1>
+<p>Now a working Python environment has been set we can move into learning the
+basics of the Python programming language.</p>
+<section id="basic-data-types">
+<h2>Basic Data Types<a class="headerlink" href="#basic-data-types" title="Permalink to this heading">#</a></h2>
+<p>Python has several built-in data types which are used to represent different
+types of data. With different data types, different operations can be performed.
+The following are the built-in data types in Python.</p>
+<table class="colwidths-auto table" id="basic-dtypes-ref">
+<caption><span class="caption-text">Standard or built-in data types in Python.</span><a class="headerlink" href="#basic-dtypes-ref" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Data Type</p></th>
+<th class="text-left head"><p>Class</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Numeric Types</p></td>
+<td class="text-left"><p>int, float, complex</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Text Type</p></td>
+<td class="text-left"><p>str</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Boolean Type</p></td>
+<td class="text-left"><p>bool</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>None Type</p></td>
+<td class="text-left"><p>NoneType</p></td>
+</tr>
+</tbody>
+</table>
+<section id="numeric-type-integer">
+<h3><em>Numeric type: integer</em><a class="headerlink" href="#numeric-type-integer" title="Permalink to this heading">#</a></h3>
+<p>Integers are numbers with no decimal parts, such as <code class="docutils literal notranslate"><span class="pre">-5,</span> <span class="pre">-4,</span> <span class="pre">-1,</span> <span class="pre">0,</span> <span class="pre">7,</span> <span class="pre">10,</span> <span class="pre">100</span></code>,
+etc. To declare an integer in Python, simply write: <code class="docutils literal notranslate"><span class="pre">variable_name</span> <span class="pre">=</span> <span class="pre">value</span></code></p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_age</span> <span class="o">=</span> <span class="mi">48</span>
+</pre></div>
+</div>
+</section>
+<section id="numeric-type-float">
+<h3><em>Numeric type: float</em><a class="headerlink" href="#numeric-type-float" title="Permalink to this heading">#</a></h3>
+<p>The float type in Python refers to floating-point numbers, those with decimal
+parts, such as <code class="docutils literal notranslate"><span class="pre">1.234,</span> <span class="pre">-3.654,</span> <span class="pre">12.01</span></code>, etc. Like an integer, to declare a float
+in Python, simply write: <code class="docutils literal notranslate"><span class="pre">variable_name</span> <span class="pre">=</span> <span class="pre">value</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_height</span> <span class="o">=</span> <span class="mf">1.75</span>
+<span class="n">user_weight</span> <span class="o">=</span> <span class="mf">80.2</span>
+</pre></div>
+</div>
+<p>The above is same as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_height</span><span class="p">,</span> <span class="n">user_weight</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">80.2</span>
+</pre></div>
+</div>
+<p>The latter involves two operations. On the right hand we pack the values and on
+the left we unpack and each variable is assigned to the corresponding value on
+the right.</p>
+</section>
+<section id="numeric-type-complex">
+<h3><em>Numeric type: complex</em><a class="headerlink" href="#numeric-type-complex" title="Permalink to this heading">#</a></h3>
+<p>Most general-purpose programming languages have limited or no support for
+complex numbers. Python is special in this regard as it has complex numbers
+built-in. In mathematical jargon, complex numbers are specified as
+<code class="docutils literal notranslate"><span class="pre">&quot;real&quot;</span> <span class="pre">+</span> <span class="pre">&quot;imaginary-j&quot;</span></code>. To define a complex number we write:</p>
+<div class="highlight-{python notranslate"><div class="highlight"><pre><span></span>2 + 3j
+</pre></div>
+</div>
+<p>We are not going to work with complex numbers in this handbook but we just
+included them for completeness.</p>
+</section>
+<section id="text-type-string">
+<h3><em>Text type: string</em><a class="headerlink" href="#text-type-string" title="Permalink to this heading">#</a></h3>
+<p>Strings represent a text surrounded by either single, double or triple quote
+marks. Triple quoted strings may span multiple lines. To declare a string, we
+can write</p>
+<ul class="simple">
+<li><p>variable_name = ‘value’ (single quotes)</p></li>
+<li><p>variable_name = “value” (double quotes)</p></li>
+<li><p>variable_name = ‘’’value’’’ (triple quotes)</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">user_first_name</span> <span class="o">=</span> <span class="s1">&#39;Michael&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_second_name</span> <span class="o">=</span> <span class="s2">&quot;Gary&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_surname</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Scott&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Strings include a number of built-in methods to manipulate them. An example of a
+method available in Python is the <em>.upper()</em> which turns the string characters
+to capital letters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Michael&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">MICHAEL</span>
+</pre></div>
+</div>
+</section>
+<section id="boolean-type-logical">
+<h3><em>Boolean type: logical</em><a class="headerlink" href="#boolean-type-logical" title="Permalink to this heading">#</a></h3>
+<p>Boolean values consist of only the values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> of the class bool.
+These values are used to check truthness or falsehood. In Python, the bool class
+is a subclass of the int class. When we compare two values, the expression is
+evaluated and returns as either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, for instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">21</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">True, False</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="composite-data-type-or-data-structures">
+<h2>Composite Data Type or Data Structures<a class="headerlink" href="#composite-data-type-or-data-structures" title="Permalink to this heading">#</a></h2>
+<table class="colwidths-auto table" id="comp-dtypes-ref">
+<caption><span class="caption-text">Standard or built-in composite data types or data structures in Python.</span><a class="headerlink" href="#comp-dtypes-ref" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Data Type</p></th>
+<th class="text-left head"><p>Class</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Sequence Types</p></td>
+<td class="text-left"><p>list, tuple, range</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Mapping Type</p></td>
+<td class="text-left"><p>dict</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Set Types</p></td>
+<td class="text-left"><p>set, frozenset</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Binary Sequence Types</p></td>
+<td class="text-left"><p>bytes, bytearray, memoryview</p></td>
+</tr>
+</tbody>
+</table>
+<section id="sequence-type-list">
+<h3><em>Sequence type: list</em><a class="headerlink" href="#sequence-type-list" title="Permalink to this heading">#</a></h3>
+<p>Lists are mutable sequences, meaning they <strong>can</strong> be modified after creation,
+typically used to store collections of homogeneous items (where the precise
+degree of similarity will vary by application). Lists may be constructed in
+several ways:</p>
+<ul class="simple">
+<li><p>Using a pair of square brackets to denote the empty list: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p>Using square brackets, separating items with commas: <code class="docutils literal notranslate"><span class="pre">[a],</span> <span class="pre">[a,</span> <span class="pre">b,</span> <span class="pre">c]</span></code></p></li>
+<li><p>Using a list comprehension: <code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">iterable]</span></code></p></li>
+<li><p>Using the type constructor: <code class="docutils literal notranslate"><span class="pre">list()</span></code> or <code class="docutils literal notranslate"><span class="pre">list(iterable)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">empty_list</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</section>
+<section id="sequence-type-tuple">
+<h3><em>Sequence type: tuple</em><a class="headerlink" href="#sequence-type-tuple" title="Permalink to this heading">#</a></h3>
+<p>Tuples are immutable sequences, meaning they <strong>cannot</strong> be modified after
+creation, typically used to store collections of heterogeneous data (such as the
+2-tuples produced by the
+<a class="reference external" href="https://docs.python.org/3/library/functions.html#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate()</span></code></a>
+built-in). Tuples are also used for cases where an immutable sequence of
+homogeneous data is needed (such as allowing storage in a
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set"><code class="docutils literal notranslate"><span class="pre">set</span></code></a> or
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> instance). Tuples
+may be constructed in a number of ways:</p>
+<ul class="simple">
+<li><p>Using a pair of parentheses to denote the empty tuple: <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p>Using a trailing comma for a singleton tuple: <code class="docutils literal notranslate"><span class="pre">a,</span></code> or <code class="docutils literal notranslate"><span class="pre">(a,)</span></code></p></li>
+<li><p>Separating items with commas: <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c</span></code> or <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code></p></li>
+<li><p>Using the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple"><code class="docutils literal notranslate"><span class="pre">tuple()</span></code></a>
+built-in: <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple(iterable)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="go">(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</span>
+</pre></div>
+</div>
+<!-- {glue:} abc_tuple -->
+</section>
+<section id="sequence-type-range">
+<h3><em>Sequence type: range</em><a class="headerlink" href="#sequence-type-range" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a> type
+represents an immutable sequence of numbers and is commonly used for looping a
+specific number of times in
+<a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#for"><code class="docutils literal notranslate"><span class="pre">for</span></code></a> loops. The
+advantage of the <code class="docutils literal notranslate"><span class="pre">range</span></code> type over a regular <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">tuple</span></code> is that a <code class="docutils literal notranslate"><span class="pre">range</span></code>
+object will always take the same (small) amount of memory, no matter the size of
+the <code class="docutils literal notranslate"><span class="pre">range</span></code> it represents (as it only stores the start, stop and step values,
+calculating individual items and subranges as needed). If a single value is
+passed to <code class="docutils literal notranslate"><span class="pre">range</span></code>, it represents the value of the <code class="docutils literal notranslate"><span class="pre">stop</span></code> parameter, as in</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">range(0, 2)</span>
+</pre></div>
+</div>
+<!-- {glue:} stop_only -->
+<p>If two values are passed to <code class="docutils literal notranslate"><span class="pre">range</span></code>, they represents the value of the <code class="docutils literal notranslate"><span class="pre">start</span></code>
+and <code class="docutils literal notranslate"><span class="pre">stop</span></code> parameters. When the value of the <code class="docutils literal notranslate"><span class="pre">start</span></code> parameter is omitted it
+defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">range(1, 3)</span>
+</pre></div>
+</div>
+<!-- {glue:} start_stop -->
+<p>The last case is when we also supply the <code class="docutils literal notranslate"><span class="pre">step</span></code>. The value of the <code class="docutils literal notranslate"><span class="pre">step</span></code>
+parameter defaults to <code class="docutils literal notranslate"><span class="pre">1</span></code> if not supplied.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">range(1, 3, 2)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>TypeError is raised if ‘float’ step is supplied as only integer is expected.</p>
+</div>
+</section>
+<section id="mapping-type-dict">
+<h3><em>Mapping type: dict</em><a class="headerlink" href="#mapping-type-dict" title="Permalink to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://docs.python.org/3/glossary.html#term-mapping"><code class="docutils literal notranslate"><span class="pre">mapping</span></code></a> object maps
+<a class="reference external" href="https://docs.python.org/3/glossary.html#term-hashable"><code class="docutils literal notranslate"><span class="pre">hashable</span></code></a> values to
+arbitrary objects. Mappings are mutable objects. <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> is currently the
+only one standard mapping type. Dictionaries can be created by several means:</p>
+<ul class="simple">
+<li><p>Use a comma-separated list of <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> pairs within braces:
+<code class="docutils literal notranslate"><span class="pre">{'jack':</span> <span class="pre">4098,</span> <span class="pre">'sjoerd':</span> <span class="pre">4127}</span></code> or <code class="docutils literal notranslate"><span class="pre">{4098:</span> <span class="pre">'jack',</span> <span class="pre">4127:</span> <span class="pre">'sjoerd'}</span></code></p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">dict</span></code> comprehension: <code class="docutils literal notranslate"><span class="pre">{}</span></code>, <code class="docutils literal notranslate"><span class="pre">{x:</span> <span class="pre">x</span> <span class="pre">\*\*</span> <span class="pre">2</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(10)}</span></code></p></li>
+<li><p>Use the type constructor: <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict([('foo',</span> <span class="pre">100),</span> <span class="pre">('bar',</span> <span class="pre">200)])</span></code>,
+<code class="docutils literal notranslate"><span class="pre">dict(foo=100,</span> <span class="pre">bar=200)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">one</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">two</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">three</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3}</span>
+</pre></div>
+</div>
+</section>
+<section id="set-type-set">
+<h3><em>Set type: set</em><a class="headerlink" href="#set-type-set" title="Permalink to this heading">#</a></h3>
+<p>A set object is an unordered collection of distinct
+<a class="reference external" href="https://docs.python.org/3/glossary.html#term-hashable">hashable</a> objects.
+Common uses include membership testing, removing duplicates from a sequence, and
+computing mathematical operations such as intersection, union, difference, and
+symmetric difference. Sets can be created by several means:</p>
+<ul class="simple">
+<li><p>Use a comma-separated list of elements within braces: <code class="docutils literal notranslate"><span class="pre">{'jack',</span> <span class="pre">'sjoerd'}</span></code></p></li>
+<li><p>Use a set comprehension: <code class="docutils literal notranslate"><span class="pre">{c</span> <span class="pre">for</span> <span class="pre">c</span> <span class="pre">in</span> <span class="pre">'abracadabra'</span> <span class="pre">if</span> <span class="pre">c</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">'abc'}</span></code></p></li>
+<li><p>Use the type constructor: <code class="docutils literal notranslate"><span class="pre">set()</span></code>, <code class="docutils literal notranslate"><span class="pre">set('foobar')</span></code>, <code class="docutils literal notranslate"><span class="pre">set(['a',</span> <span class="pre">'b',</span> <span class="pre">'foo'])</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">set</span><span class="p">(</span><span class="s1">&#39;foobar&#39;</span><span class="p">)</span>
+<span class="go">{&#39;a&#39;, &#39;b&#39;, &#39;f&#39;, &#39;o&#39;, &#39;r&#39;}</span>
+</pre></div>
+</div>
+</section>
+<section id="binary-sequence-type-bytes">
+<h3><em>Binary sequence type: bytes</em><a class="headerlink" href="#binary-sequence-type-bytes" title="Permalink to this heading">#</a></h3>
+<p>Bytes objects are immutable sequences of single bytes. Since many major binary
+protocols are based on the ASCII text encoding, bytes objects offer several
+methods that are only valid when working with ASCII compatible data and are
+closely related to string objects in a variety of other ways.</p>
+<p>In-depth discussion about the above different data types, {numref} Table %s
+<code class="docutils literal notranslate"><span class="pre">comp-dtypes-ref</span></code> can be found
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#">here</a>.</p>
+</section>
+</section>
+<section id="type-casting-in-python">
+<h2>Type Casting in Python<a class="headerlink" href="#type-casting-in-python" title="Permalink to this heading">#</a></h2>
+<p>Sometimes it is necessary to convert a variable from one type to another, such
+as from a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>) to an integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>) or vice-versa. Here, we discuss
+three built-in functions in Python that allow us to do type casting. These are
+the <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, and <code class="docutils literal notranslate"><span class="pre">str()</span></code> functions. The round brackets indicate that
+these are functions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">int()</span></code> function takes in a <code class="docutils literal notranslate"><span class="pre">float</span></code> or a string and converts it to an
+integer. To change a <code class="docutils literal notranslate"><span class="pre">float</span></code> to an integer, we can write</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="mf">5.71234</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>The result of the above operation is 5. Anything after the decimal point is
+removed. To change a string to an integer, we can type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>Again, the result of the above operation is 4. However, we cannot do
+<code class="docutils literal notranslate"><span class="pre">int(&quot;Hello&quot;)</span></code> or <code class="docutils literal notranslate"><span class="pre">int('4.258746')</span></code>. We will get an error in both cases. To be
+able to convert decimal numbers into an integer we need to use a specialised
+built-in module decimal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;4.258746&#39;</span><span class="p">))</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>The decimal package is a rich library with methods that can also directly
+convert the string number to either <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapter2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-type-integer"><em>Numeric type: integer</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-type-float"><em>Numeric type: float</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-type-complex"><em>Numeric type: complex</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-type-string"><em>Text type: string</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-type-logical"><em>Boolean type: logical</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composite-data-type-or-data-structures">Composite Data Type or Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-list"><em>Sequence type: list</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-tuple"><em>Sequence type: tuple</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-type-range"><em>Sequence type: range</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-type-dict"><em>Mapping type: dict</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-type-set"><em>Set type: set</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-sequence-type-bytes"><em>Binary sequence type: bytes</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-casting-in-python">Type Casting in Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ECOP Africa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div> <a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>    <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://camo.githubusercontent.com/9b9ea65d95c9ef878afa1987df65731d47681336/68747470733a2f2f696d672e736869656c64732e696f2f707970692f6c2f736561626f726e2e737667"></a>    The contents of this repository are shared under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.    Software elements are additionally licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause">BSD (3-Clause) License</a>.</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

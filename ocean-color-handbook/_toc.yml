@@ -1,0 +1,78 @@
+# @format
+
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md
+options: # The options key will be applied to all chapters, but not sub-sections
+  numbered: True
+# parts:
+#   - caption: "INTRODUCTION"
+#     numbered: True # Only applies to chapters in Part 1.
+chapters:
+  # - file: acknowledgements.md
+  # - file: chapter1/chapter1.md
+  - file: preface/intro.md
+    sections:
+      - file: preface/howto.md
+      - file: preface/structure.md
+      - file: preface/acknowledgements.md
+      - file: preface/authors.md
+  - file: chapter1/intro.md
+    sections:
+      # - file: chapter1/intro.md
+      - file: chapter1/applications.md
+      - file: chapter1/objective.md
+      - file: chapter1/learnoutcomes.md
+      - file: chapter1/references.md
+  # - caption: "PYTHON OVERVIEW"
+  #   numbered: True
+  # chapters:
+  # - file: chapter2/chapter2.md
+  - file: chapter2/intro.md
+    sections:
+      # - file: chapter2/intro.md
+      - file: chapter2/pyenv.md
+      - file: chapter2/pysyntax.md
+      - file: chapter2/ocmodules.md
+      - file: chapter2/dataimport.md
+      - file: chapter2/datavis.md
+      - file: chapter2/summary.md
+      - file: chapter2/references.md
+  # - caption: "OCEAN COLOUR OVERVIEW"
+  #   numbered: True
+  # chapters:
+  - file: chapter3/intro.md
+    sections:
+      - file: chapter3/ocrs.md
+      - file: chapter3/dataproducts.md
+      - file: chapter3/dataretrieval.md
+  # - caption: "MAP PROJECTIONS IN PYTHON"
+  #   numbered: True
+  # chapters:
+  - file: chapter4/intro.md
+    sections:
+      - file: chapter4/definitions.md
+  # - caption: "DATA ANALYSIS IN PYTHON"
+  #   numbered: True
+  # chapters:
+  - file: chapter5/intro.md
+    sections:
+      - file: chapter5/swathreproj.md
+      - file: chapter5/timeanalysis.md
+      - file: chapter5/spaceanalysis.md
+      - file: chapter5/outputs.md
+  # - caption: "TUTORIALS"
+  #   numbered: True
+  # chapters:
+  - file: tutorials/intro.md
+    sections:
+      - file: tutorials/tutorial1.ipynb
+      - file: tutorials/tutorial2.ipynb
+      - file: tutorials/tutorial3.ipynb
+      - file: tutorials/tutorial4.ipynb
+      - file: tutorials/tutorial5.ipynb
+  # - caption: References
+  #   chapters:
+  #     - file: references.md
