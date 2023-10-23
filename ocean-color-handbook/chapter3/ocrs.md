@@ -2,6 +2,8 @@
 
 **Authors:** Brishan Kalyan, Levis Sirikwa, Eligio Maure
 
+**Reviewers:**
+
 # Ocean colour and remote sensing
 
 ## What is remote sensing?
@@ -9,17 +11,7 @@
 Remote sensing refers to the process of detecting and monitoring the physical
 characteristics of an object without direct contact. It happens by measuring the
 electromagnetic energy ({numref}`Figure {number} <fig32>`) emitted or reflected
-from a distance. When the Sun is the primary source of energy detected by remote
-sensors, these types of sensors are denoted passive sensors ({numref}`` Figure
-3.5.2). The other type of sensors are called active because they use their own
-source of energy. An example of active sensors include radio detection and
-ranging (radar) sensors, altimeters, and scatterometers. In what follows, our
-discussion revolves around the so-called passive sensors. The majority of these
-sensors operate in the visible, infrared, thermal infrared, and microwave
-portions of the electromagnetic spectrum. Unlike active sensors such as
-microwaves that can see through clouds, passive sensors are hindered by the
-presence of dense clouds and thus cannot take measurements in areas under cloud
-cover.
+from a distance.
 
 ```{figure} ./figure32.jpeg
 ---
@@ -29,6 +21,30 @@ name: fig32
 Diagram of the Electromagnetic Spectrum. Source: [NASA Science](https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing).
 ```
 
+When the Sun is the primary source of energy detected by remote sensors, these
+types of sensors are denoted passive sensors. The other type of sensors are
+called active because they use their own source of energy
+({numref}`activePassive`). An example of active sensors include synthetic
+aperture radar
+([SAR](https://www.earthdata.nasa.gov/learn/backgrounders/what-is-sar)) sensors,
+[altimeters](https://training.eumetsat.int/mod/book/view.php?id=12569&chapterid=468),
+and
+[scatterometers](https://resources.eumetrain.org/data/4/438/navmenu.php?tab=2&page=3.0.0#:~:text=Scatterometers%20are%20active%20remote%20sensing,and%20detect%20the%20backscattered%20signals.).
+In what follows, our discussion revolves around the so-called passive sensors.
+The majority of these sensors operate in the visible, infrared, thermal
+infrared, and microwave portions of the electromagnetic spectrum. Unlike active
+sensors that can see through clouds, passive sensors are hindered by the
+presence of dense clouds and thus cannot take measurements in areas under cloud
+cover.
+
+```{figure} ./activePassive.jpg
+---
+align: left
+name: activePassive
+---
+Diagram of a passive sensor versus an active sensor. Source: [NASA Applied Sciences Remote Sensing Training Program](https://www.earthdata.nasa.gov/learn/backgrounders/remote-sensing).
+```
+
 ## What is ocean colour remote sensing?
 
 Ocean colour remote sensing refers to the ability to measure, track, and analyse
@@ -36,13 +52,13 @@ the colour of water bodies from a distance, i.e., space (typically from
 artificial satellites). The water bodies include the ocean, estuaries, rivers,
 lakes and wetlands. The specific parameters of interest in the field of ocean
 colour remote sensing include colour variations, sea surface temperature, winds,
-and currents among other unique biotic and abiotic factors in water bodies. The
-main objective of ocean colour remote sensing is to be able to describe the
-colour of the water bodies as observed from the satellites, understand the state
-of aquatic ecosystem health, and the dynamics of their productivity
-({numref}`Figure {number} <fig33>` and {numref}`Figure {number} <fig34>`). The
-observations made from remote sensing are pegged on the spectrum of water
-leaving radiance.
+and currents among other unique biotic and abiotic factors in water bodies
+([need citation]()). The main objective of ocean colour remote sensing is to be
+able to describe the colour of the water bodies as observed from the satellites,
+understand the state of aquatic ecosystem health, and the dynamics of their
+productivity ({numref}`Figure {number} <fig33>` and
+{numref}`Figure {number} <fig34>`). The observations made from remote sensing
+are pegged on the spectrum of water leaving radiance.
 
 ```{figure} ./figure33.png
 ---

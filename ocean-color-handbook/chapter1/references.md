@@ -6,5 +6,5 @@
 
 ```{bibliography}
 :style: unsrt
-:filter: docname % oc_applications
+:filter: docname % applications
 ```

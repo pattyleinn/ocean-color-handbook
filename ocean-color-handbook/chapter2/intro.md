@@ -2,6 +2,8 @@
 
 **Authors:** Mathabo Malange, Phangoxolo Sishuba
 
+**Reviewers:**
+
 (chapter2)=
 
 # A Brief Introduction to Python

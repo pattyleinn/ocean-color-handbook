@@ -2,6 +2,8 @@
 
 **Authors:** Mathabo Malange, Phangoxolo Sishuba
 
+**Reviewers:**
+
 # Modules Relevant to Ocean Colour Data Analysis
 
 The following table introduces a list of modules relevant to the discussion of

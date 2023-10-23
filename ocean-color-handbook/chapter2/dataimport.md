@@ -27,14 +27,14 @@ To open a text file for reading it suffice to pass the filename to the `open()`
 function:
 
 ```python
->>> fid = open("filename.txt")
+fid = open("filename.txt")
 ```
 
 By default the file is open in read and text mode so that the "r" and "t"
 options can be omitted. The above is equivalent to
 
 ```python
->>> fid = open("filename.txt", "rt")
+fid = open("filename.txt", "rt")
 ```
 
 It is important to note that the "filename.txt" is visible to the Python
@@ -44,7 +44,7 @@ located in the disk. Suppose the file is in the Windows documents folder. In
 that case we can specify the full path as follows:
 
 ```python
->>> fid = open(r"C:\Users\username\Documents\filename.txt", "rt")
+fid = open(r"C:\Users\username\Documents\filename.txt", "rt")
 ```
 
 Note the "r" before the file path. This is to tell Python to treat the file path
@@ -55,7 +55,7 @@ beginning of the string or we could add a second escape character '\' to the
 path so that only one is treated as a path separator as follows.
 
 ```python
->>> fid = open(r"C:\\Users\\username\\Documents\\filename.txt", "rt")
+fid = open(r"C:\\Users\\username\\Documents\\filename.txt", "rt")
 ```
 
 Escape characters are used for special operations such as specifying a newline
@@ -65,8 +65,8 @@ The `open()` operation returns an object 'fid' which we name file id, and which
 has a `.read()` method for reading the content of the file.
 
 ```python
->>> fid = open("filename.txt", "rt")
->>> print(fid.read())
+fid = open("filename.txt", "rt")
+print(fid.read())
 ```
 
 While the `.read()` method returns the whole text, we can pass an integer to
@@ -77,9 +77,9 @@ method twice, two lines of text are returned. Finally, we can loop through the
 contents of the file and process each line at the time.
 
 ```python
->>> fid = open("filename.txt", "rt")
->>> for line in fid:
->>>     print(line)
+fid = open("filename.txt", "rt")
+for line in fid:
+    print(line)
 ```
 
 Once we are done processing the contents of the file, we should always close the
@@ -88,16 +88,16 @@ which guarantees the file is properly closed even in the case when an error that
 interrupts the normal process occurs.
 
 ```python
->>> fid = open("filename.txt", "rt")
->>> print(fid.read())
->>> fid.close()
+fid = open("filename.txt", "rt")
+print(fid.read())
+fid.close()
 ```
 
 or
 
 ```python
->>> with open("filename.txt", "rt") as fid:
->>>     print(fid.read())
+with open("filename.txt", "rt") as fid:
+    print(fid.read())
 ```
 
 ## Text File Write
@@ -107,7 +107,7 @@ the `open()` function, which in this case will take: the file name and `"w"` for
 write mode:
 
 ```python
->>> fid = open("filename.txt", "w")
+fid = open("filename.txt", "w")
 ```
 
 Once the file is open, the `.write()` method can be used to write content to the
@@ -116,8 +116,8 @@ will be written to the file. Remember, to write multiple lines, the newline
 character `\n` can be used as a separator.
 
 ```python
->>> fid.write("Hello, world!\n")
->>> fid.write("This is an example file.")
+fid.write("Hello, world!\n")
+fid.write("This is an example file.")
 ```
 
 After writing the text to be included in the file, it is important to close the
@@ -137,7 +137,7 @@ To use the `netCDF4` library to read files in Python, the first step is to
 import the library:
 
 ```python
->>> import netCDF4 as nc
+import netCDF4 as nc
 ```
 
 `nc` here serves as alias to the `netCDF4` library. Remember to ensure that you
@@ -147,8 +147,8 @@ function called `Dataset()` which is used to open `netCDF` files. To open a
 `netCDF` file, we pass the file path to `Dataset()`.
 
 ```python
->>> filepath = "C:\\Users\\username\\Documents\\Data\\file.nc"
->>> dataset = nc.Dataset(filepath)
+filepath = "C:\\Users\\username\\Documents\\Data\\file.nc"
+dataset = nc.Dataset(filepath)
 ```
 
 The netCDF4 library also has functions that allow you to access the variables
@@ -159,8 +159,8 @@ file. You can use these variables and attributes to retrieve information and
 data from the NetCDF file:
 
 ```python
->>> variables = dataset.variables
->>> attributes = dataset.ncattrs()
+variables = dataset.variables
+attributes = dataset.ncattrs()
 ```
 
 Once the data has been retrieved from the variable, you can perform any
@@ -172,5 +172,5 @@ file once you have finished reading or modifying its contents. Use the
 `.close()` method of the dataset object created above:
 
 ```python
->>> dataset.close()
+dataset.close()
 ```

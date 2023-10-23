@@ -2,6 +2,8 @@
 
 **Authors:** Mathabo Malange, Phangoxolo Sishuba
 
+**Reviewers:**
+
 # Python Working Environments
 
 A Python working environment is a tool that helps keep dependencies required by

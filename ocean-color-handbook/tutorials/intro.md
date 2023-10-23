@@ -1,6 +1,8 @@
 <!-- @format -->
 
-**Authors:** Anthea Chloe Pillay, Zahra Okba
+**Authors:**
+
+**Reviewers:**
 
 (case-studies)=
 
@@ -20,3 +22,5 @@ Introduces case studies that make use of the concepts introduced in this manual.
 - Case study 6: Application in Ocean Conservancy
 
 ## Further reading
+
+- [Resources](https://ioccg.org/what-we-do/ioccg-publications/eu-prespoioccg-handbook/)

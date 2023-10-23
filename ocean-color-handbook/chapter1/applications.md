@@ -2,6 +2,8 @@
 
 **Authors:** Anthea Chloe Pillay, Zahra Okba
 
+**Reviewers:**
+
 # Ocean colour remote sensing and its application
 
 Ocean colour remote sensing has been used as a tool in assessing the "health" of
